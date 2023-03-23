@@ -14,7 +14,7 @@ function time_template(id, obj) {
     return template_html
 }
 
-function laser_start(id) {
+function time_start(id) {
     if (machines[id].status) {
 
         machines[id].status = false;
@@ -36,8 +36,6 @@ function laser_counter(id) {
     document.getElementById("timer" + id).innerHTML = countTimer(actual_time);
     price = 0;
     if (actual_time >= (1 * 3600) && actual_time < (4 * 3600)) {
-
-
         price = Math.round(actual_time / 3600) * 15;
     }
     else if (actual_time >= (4 * 3600)) {
@@ -62,30 +60,14 @@ function printer_counter(id) {
     actual_time = machines[id].timer
     document.getElementById("timer" + id).innerHTML = countTimer(actual_time);
     price = 0;
-    if (actual_time >= (1 * 3600) && actual_time < (4 * 3600)) {
-
-
-        price = Math.round(actual_time / 3600) * 15;
-    }
-    else if (actual_time >= (4 * 3600)) {
-        price = (actual_time - (4 * 3600));
-        price = Math.round(price / 3600) * 15;
-        price = price + 45;
-    }
-    else {
-
-        price = Math.round(actual_time / (15 * 60)) * 5;
-        if (price == 0) {
-            price = 5;
-        }
-        if (price > 15) {
-            price = 15;
-        }
+    price = Math.round(actual_time / 3600) * 3;
+    if (price == 0) {
+        price = 3;
     }
     document.getElementById("price" + id).innerHTML = price;
 }
 
-function laser_reset(id) {
+function time_reset(id) {
     document.getElementById("price" + id).innerHTML = 0;
     document.getElementById("timer" + id).innerHTML = "00:00:00";
     machines[id].timer = 0;
@@ -103,5 +85,4 @@ function biglaser_counter(id) {
     }
     document.getElementById("price" + id).innerHTML = price;
 }
-
 
