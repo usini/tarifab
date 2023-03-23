@@ -93,3 +93,9 @@ function countTimer(time) {
         seconds = "0" + seconds;
     return hour + ":" + minute + ":" + seconds;
 }
+
+function count_text(id) {
+    count = document.getElementById("countinput" + id).value;
+    document.getElementById("count" + id).innerHTML = count;
+    machines[id].counter(id);
+}

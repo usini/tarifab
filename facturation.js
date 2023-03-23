@@ -14,6 +14,31 @@ function time_template(id, obj) {
     return template_html
 }
 
+function count_template(id, obj) {
+    machines[id].timer = 0;
+    template_html = `
+    <div>
+        <details>
+            <summary>🔧 ${obj.name} - 👱<span id="user_${id}">?</span> - 🔴<span id="count${id}">0</span> <span>${obj.value}</span> - 💲<span id="price${id}">0</span>€</summary>
+            <label>Utilisateur</label><input id="userinput_${id}" onkeyup='user_text("${id}")' type="text">
+            <label>${obj.value}</label><input id="countinput${id}" onchange='count_text("${id}")' placeholder="10" type="text">
+        </details>
+    </div>
+    `
+    return template_html
+}
+
+function embroiderer_counter(id){
+    count = document.getElementById("count"+id).innerHTML;
+    if(count < 1000){
+        price = 0.5
+    } else {
+        price = Math.ceil(count/1000) * 0.5;
+    }
+    document.getElementById("price" + id).innerHTML = price;
+    
+}   
+
 function time_start(id) {
     if (machines[id].status) {
 

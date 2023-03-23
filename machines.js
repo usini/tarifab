@@ -3,49 +3,59 @@ fablabname = "LABSud";
 
 machines = []
 
-machines[0] = {
+machines.push({
     "name":"Laser 80W 1",
     "template":time_template,
     "start":"time_start",
     "counter":laser_counter,
     "reset":"time_reset"
-}
-machines[1] = {
+})
+
+machines.push({
     "name":"Laser 80W 2",
     "template":time_template,
     "start":"time_start",
     "counter":laser_counter,
     "reset":"time_reset"
-}
+})
 
-machines[2] = {
+machines.push({
     "name":"Laser 180W",
     "template":time_template,
     "start":"time_start",
     "counter":biglaser_counter,
     "reset":"time_reset"
-}
+})
 
-machines[3] = {
+machines.push({
     "name":"Prusa MK3 - 1",
     "template":time_template,
     "start":"time_start",
     "counter":printer_counter,
     "reset":"time_reset"
-}
+})
 
-machines[4] = {
+machines.push({
     "name":"Prusa MK3 - 2",
     "template":time_template,
     "start":"time_start",
     "counter":printer_counter,
     "reset":"time_reset"
-}
+})
 
-machines[5] = {
+machines.push({
     "name":"Prusa Mini - 3",
     "template":time_template,
     "start":"time_start",
     "counter":printer_counter,
     "reset":"time_reset"
-}
+})
+
+machines.push({
+    "name":"Brodeuse Numérique",
+    "template":count_template,
+    "value":"Points",
+    "counter":embroiderer_counter,
+    "reset":"count_reset"
+})
+
