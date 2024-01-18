@@ -92,6 +92,23 @@ function printer_counter(id) {
     document.getElementById("price" + id).innerHTML = price;
 }
 
+function resin_printer_counter(id) {
+    actual_time = machines[id].timer
+    document.getElementById("timer" + id).innerHTML = countTimer(actual_time);
+    price = 0;
+    price = Math.round(actual_time / 3600) * 3;
+    if (price == 0) {
+        price = 5;
+    }
+    document.getElementById("price" + id).innerHTML = price;
+}
+
+function time_reset(id) {
+    document.getElementById("price" + id).innerHTML = 0;
+    document.getElementById("timer" + id).innerHTML = "00:00:00";
+    machines[id].timer = 0;
+}
+
 function time_reset(id) {
     document.getElementById("price" + id).innerHTML = 0;
     document.getElementById("timer" + id).innerHTML = "00:00:00";
