@@ -52,6 +52,14 @@ machines.push({
 })
 
 machines.push({
+    "name":"Elegoo Mars",
+    "template":time_template,
+    "start":"time_start",
+    "counter":resin_printer_counter,
+    "reset":"time_reset"
+})
+
+machines.push({
     "name":"Brodeuse Numérique",
     "template":count_template,
     "value":"Points",
