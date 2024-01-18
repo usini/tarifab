@@ -96,7 +96,7 @@ function resin_printer_counter(id) {
     actual_time = machines[id].timer
     document.getElementById("timer" + id).innerHTML = countTimer(actual_time);
     price = 0;
-    price = Math.round(actual_time / 3600) * 3;
+    price = Math.round(actual_time / 3600) * 5;
     if (price == 0) {
         price = 5;
     }
