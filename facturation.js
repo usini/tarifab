@@ -56,6 +56,17 @@ function time_start(id) {
     }
 }
 
+function cnc_counter(id) {
+    actual_time = machines[id].timer
+    document.getElementById("timer" + id).innerHTML = countTimer(actual_time);
+    price = 0;
+    price = Math.round(actual_time / 3600) * 10;
+    if (price == 0) {
+        price = 10;
+    }
+    document.getElementById("price" + id).innerHTML = price;
+}
+
 function laser_counter(id) {
     actual_time = machines[id].timer
     document.getElementById("timer" + id).innerHTML = countTimer(actual_time);
