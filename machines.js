@@ -28,6 +28,22 @@ machines.push({
 })
 
 machines.push({
+    "name":"CNC 1",
+    "template":time_template,
+    "start":"time_start",
+    "counter":cnc_counter,
+    "reset":"time_reset"
+})
+
+machines.push({
+    "name":"CNC 2",
+    "template":time_template,
+    "start":"time_start",
+    "counter":cnc_counter,
+    "reset":"time_reset"
+})
+
+machines.push({
     "name":"Prusa MK3 - 1",
     "template":time_template,
     "start":"time_start",
