@@ -72,21 +72,21 @@ function laser_counter(id) {
     document.getElementById("timer" + id).innerHTML = countTimer(actual_time);
     price = 0;
     if (actual_time >= (1 * 3600) && actual_time < (4 * 3600)) {
-        price = Math.round(actual_time / 3600) * 15;
+        price = Math.round(actual_time / 3600) * 18;
     }
     else if (actual_time >= (4 * 3600)) {
         price = (actual_time - (4 * 3600));
-        price = Math.round(price / 3600) * 15;
+        price = Math.round(price / 3600) * 18;
         price = price + 45;
     }
     else {
 
-        price = Math.round(actual_time / (15 * 60)) * 5;
+        price = Math.round(actual_time / (18 * 60)) * 5;
         if (price == 0) {
-            price = 5;
+            price = 6;
         }
-        if (price > 15) {
-            price = 15;
+        if (price > 18) {
+            price = 18;
         }
     }
     document.getElementById("price" + id).innerHTML = price;
@@ -96,7 +96,7 @@ function printer_counter(id) {
     actual_time = machines[id].timer
     document.getElementById("timer" + id).innerHTML = countTimer(actual_time);
     price = 0;
-    price = Math.round(actual_time / 3600) * 3;
+    price = Math.round(actual_time / 3600) * 4;
     if (price == 0) {
         price = 3;
     }
