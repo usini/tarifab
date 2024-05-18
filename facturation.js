@@ -77,7 +77,7 @@ function laser_counter(id) {
     else if (actual_time >= (4 * 3600)) {
         price = (actual_time - (4 * 3600));
         price = Math.round(price / 3600) * 18;
-        price = price + 45;
+        price = price + 54;
     }
     else {
 
