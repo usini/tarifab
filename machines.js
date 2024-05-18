@@ -23,7 +23,7 @@ machines.push({
     "name":"Laser 180W",
     "template":time_template,
     "start":"time_start",
-    "counter":biglaser_counter,
+    "counter":laser_counter,
     "reset":"time_reset"
 })
 
